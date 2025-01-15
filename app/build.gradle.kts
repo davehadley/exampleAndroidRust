@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "uk.co.davehadley.exampleandroidrust"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "uk.co.davehadley.exampleandroidrust"
-        minSdk = 34
-        targetSdk = 34
+        minSdk = 35
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
