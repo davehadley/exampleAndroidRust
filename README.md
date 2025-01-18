@@ -11,6 +11,12 @@ You will need to implement JNI bindings to call Rust code from Kotlin/Java.
 On the Rust side, you can use the [JNI](https://docs.rs/jni/latest/jni/) crate.
 On the Kotlin/Java side you can follow the [Android NDK documentation](https://developer.android.com/ndk/guides). 
 
+You may need to install [CMake and the Android SDK](https://developer.android.com/studio/projects/install-ndk#install_ndk_and_cmake_automatically).
+The Android Gradle Plugin seems to demand that the CMake version in `build.gradle.kts` exactly matches the version
+installed along side your Android SDK. You may need to update this file so that the version number matches the installed version.
+
+You may need to [install additional Android targets](https://rust-lang.github.io/rustup/cross-compilation.html) that you wish to cross-compile to.
+
 ## License
 
 Licensed under either of
