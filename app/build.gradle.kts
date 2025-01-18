@@ -57,7 +57,7 @@ android {
     externalNativeBuild {
         cmake {
             path = file("src/main/rust/CMakeLists.txt")
-            // You may need to accept lincenses:
+            // You may need to accept licenses:
             // https://developer.android.com/studio/projects/install-ndk#install_ndk_and_cmake_automatically
             // and install CMake and the Android SDK:
             // https://developer.android.com/studio/projects/install-ndk
