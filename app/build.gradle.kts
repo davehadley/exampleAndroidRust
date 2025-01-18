@@ -9,14 +9,20 @@ android {
 
     defaultConfig {
         applicationId = "uk.co.davehadley.exampleandroidrust"
-        minSdk = 35
-        targetSdk = 35
+        minSdk = 34
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
+        }
+
+        externalNativeBuild {
+            cmake {
+                targets.add("example_android_rust_library")
+            }
         }
     }
 
@@ -45,6 +51,19 @@ android {
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path = file("src/main/rust/CMakeLists.txt")
+            // You may need to accept lincenses:
+            // https://developer.android.com/studio/projects/install-ndk#install_ndk_and_cmake_automatically
+            // and install CMake and the Android SDK:
+            // https://developer.android.com/studio/projects/install-ndk
+            // You may need to update this version number to match the version installed alongside
+            // your Android SDK / NDK
+            version = "3.31.1"
         }
     }
 }
