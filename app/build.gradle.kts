@@ -22,6 +22,10 @@ android {
         externalNativeBuild {
             cmake {
                 targets.add("example_android_rust_library")
+
+                // if you need libc++
+                // see: https://developer.android.com/ndk/guides/cpp-support#cs
+                arguments.add("-DANDROID_STL=c++_shared")
             }
         }
     }
